@@ -1,0 +1,36 @@
+.delivery-list {
+  flex: 1;
+  padding: 0rem;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.delivery-card {
+  border: -1rem solid #ffffff;
+  border-radius: 0px;
+  padding: 0rem;
+  margin-bottom: 0rem;
+}
+
+.delivery-card .shipment {
+  font-weight: bold;
+  color: #666;
+}
+
+.delivery-card .product {
+  color: #666;
+}
+
+.delivery-card .shipment,
+.delivery-card .product,
+.delivery-card .locations,
+.delivery-card .client {
+  color: #666; /* Ensures all inner elements inherit the gray color */
+  margin: 1rem;
+}
+
+.delivery-list h2 {
+  color: #666; /* Explicitly set the color for the heading */
+  font-size: 2rem; /* Optional, for better heading emphasis */
+  margin-bottom: 5rem; /* Optional, space below the heading */
+}

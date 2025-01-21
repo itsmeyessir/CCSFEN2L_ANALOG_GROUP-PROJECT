@@ -1,0 +1,106 @@
+.header-wrapper {
+  margin-left: 300px; /* Reserve space for the navbar */
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  margin-bottom: 20px;
+  padding: 30px 20px 10px 20px; /* Padding: top, left, bottom, right */
+}
+
+.header-title {
+  flex: 0 0 auto; /* Prevent shrinking of the title */
+  margin-bottom: 0px; /* Add spacing for when it wraps */
+}
+
+.header-title h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.header-title p {
+  font-size: 12px;
+  color: #888;
+  margin: 5px 0 0;
+}
+
+.search-bar {
+  flex: 1 1 300px;
+  margin: 0 20px;
+  padding: 10px;
+  border: 1px solid #f0f1f3;
+  border-radius: 7px;
+  max-width: calc(900px + 40px);
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus */
+}
+
+.search-bar:focus {
+  outline: none; /* Remove default browser focus outline */
+  border-color: #1a6ecd; /* Change border color on click/focus */
+  box-shadow: 0 0 5px rgba(9, 81, 182, 0.5); /* Add a subtle glow effect */
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto; /* Prevent shrinking */
+  margin-top: 0px; /* Add space when it wraps */
+}
+
+.notification-icon {
+  font-size: 18px;
+  margin-right: 80px;
+}
+
+.profile-info {
+  text-align: left; /* Align text to the left */
+  margin-right: 30px;
+}
+
+.profile-name {
+  font-size: 15px; /* Match header-title h1 */
+  font-weight: normal;
+  margin: 0; /* Remove margin to eliminate extra vertical space */
+}
+
+.profile-role {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header-wrapper {
+    margin-left: 0; /* Remove left margin for smaller screens */
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-title {
+    margin-bottom: 15px;
+    max-width: 100%;
+  }
+
+  .search-bar {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+
+  .profile-info {
+    text-align: left;
+  }
+}

@@ -1,0 +1,14 @@
+.layout {
+  display: flex;
+}
+
+.layout nav {
+  width: 15%; /* Adjust width as needed */
+  background-color: white;
+  padding: 20px;
+}
+
+.layout .content {
+  flex-grow: 1; /* Allow content to fill available space */
+  padding: 20px;
+}

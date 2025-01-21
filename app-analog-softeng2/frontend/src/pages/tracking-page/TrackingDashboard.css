@@ -1,0 +1,21 @@
+.tracking-dashboard {
+  display: flex;
+  width: 100%; /* Set fixed width */
+  height: 100%; /* Set fixed height */
+  margin: 0 auto; /* Center the dashboard horizontally */
+}
+
+/* Main content container inside the dashboard */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Take up the full available space inside the parent */
+  height: 100%; /* Ensures the container occupies full height */
+}
+
+/* Content section */
+.content {
+  display: flex;
+  flex: 1;
+}

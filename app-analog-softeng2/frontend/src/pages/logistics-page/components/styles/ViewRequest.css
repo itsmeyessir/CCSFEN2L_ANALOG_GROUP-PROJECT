@@ -1,0 +1,74 @@
+.view-request {
+  margin-left: 300px;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.view-request h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.request-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.request-table th,
+.request-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.request-table th {
+  color: #555;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.request-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status-pending {
+  color: orange;
+}
+
+.status-approved {
+  color: #10a142;
+}
+
+.action-link {
+  color: #2775b4;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .view-request {
+    margin-left: 20px;
+    padding: 15px;
+  }
+
+  .request-table th,
+  .request-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .view-request h2 {
+    font-size: 18px;
+  }
+}

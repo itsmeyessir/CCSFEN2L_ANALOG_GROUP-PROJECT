@@ -1,0 +1,40 @@
+.work-in-progress-table {
+  height: fit-content;
+  width: fit-content max-content;
+  padding: 1rem;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 1.5rem;
+}
+
+.table-label {
+  flex: 3;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.table {
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.table th,
+.table td {
+  padding: 8px 16px;
+  text-align: left;
+  padding: 0.9rem;
+  border-top: 1px solid #f0f1f3;
+}
+
+/* Status-specific styling */
+.status-pending {
+  color: #f90;
+}
+
+.status-approved {
+  color: #4caf50;
+}
+
+.status-rejected {
+  color: #f44336;
+}

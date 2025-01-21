@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ecf8ff;
+  border-bottom: 0rem solid #e0e4e8;
+}
+
+.header input {
+  width: 40%;
+  padding: 1rem;
+  border: 0rem solid #000000;
+  border-radius: 1rem;
+}
+
+.header .profile {
+  display: flex;
+  align-items: center;
+}
+
+.header .profile img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+
+.header h1 {
+  color: #666; /* Apply #666 color to the main heading */
+  font-size: 2rem; /* Optional: make the title large */
+  margin-bottom: 1rem; /* Optional: space below the title */
+}
+
+input[type="text"]::placeholder {
+  color: #999; /* Optional: slightly lighter gray for placeholder text */
+}
+
+/* Profile Section Styling */
+.profile span {
+  color: #666; /* Apply #666 color to profile text */
+  font-size: 18px; /* Optional: slightly smaller text for profile */
+}

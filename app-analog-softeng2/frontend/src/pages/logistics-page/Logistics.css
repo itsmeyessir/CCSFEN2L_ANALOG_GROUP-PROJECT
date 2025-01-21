@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fd; /* Set your desired background color here */
+  font-family: Arial, sans-serif; /* Optional: Set a default font for the workspace */
+}
+
+.workspace-wrapper {
+  background-color: #f8f9fd; /* Light grey or any color */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+}

@@ -1,0 +1,56 @@
+.production-chart {
+  height: fit-content;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-controls div {
+  display: flex;
+  align-items: center;
+}
+
+.filter-controls label {
+  margin-right: 10px;
+}
+
+.filter-dropdown {
+  flex: 1;
+  display: inline-block;
+  padding: 0.3rem;
+  padding-right: 1rem;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px;
+  background-color: transparent; /* Light gray background */
+  position: relative; /* For positioning the dropdown arrow */
+}
+
+.filter-dropdown select {
+  background-color: transparent; /* Transparent background to match parent */
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
+}
+
+.table-label {
+  flex: 3;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.filter-dropdown::after {
+  content: "\25BC"; /* Unicode for downward arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

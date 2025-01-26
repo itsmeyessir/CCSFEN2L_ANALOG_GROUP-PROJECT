@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useAuth } from "../../hooks/useAuth";  // Importing useAuth to check user status
 import { useNavigate } from "react-router-dom";  // Importing useNavigate to redirect
 import "./dashboard.css";

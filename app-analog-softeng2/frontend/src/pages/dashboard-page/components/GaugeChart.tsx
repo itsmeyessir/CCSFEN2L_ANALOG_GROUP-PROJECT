@@ -21,7 +21,7 @@ const GaugeRate: React.FC = () => {
         arcWidth={0.3}
         percent={value}
         textColor="#000"
-        formatTextValue={(value) => `${Math.round(value * 1000)} units`}
+        formatTextValue={(value: string) => `${Math.round(parseFloat(value) * 1000)} units`}
       />
       <button className="randomize-button" onClick={randomizeValue}>
         Randomize Value

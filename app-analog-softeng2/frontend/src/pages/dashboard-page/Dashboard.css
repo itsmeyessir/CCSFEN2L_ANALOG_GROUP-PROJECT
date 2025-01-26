@@ -25,3 +25,16 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-contents {
+    flex-direction: column;
+  }
+
+  .bigger-charts,
+  .smaller-charts {
+    flex: none;
+    width: 100%;
+  }
+}

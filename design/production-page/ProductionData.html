@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .production-data {
+            max-width: 800px;
+            margin: auto;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            background-color: steelblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="production-data">
+        <h1>Production Data</h1>
+
+        <!-- Add/Edit Form -->
+        <form class="form">
+            <h2>Add Production Data</h2>
+            <input type="text" placeholder="Product ID" required>
+            <input type="text" placeholder="Product Name" required>
+            <input type="number" placeholder="Quantity Produced" required>
+            <input type="date" required>
+            <button type="submit">Add</button>
+            <button type="button">Cancel</button>
+        </form>
+
+        <!-- Production Data Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Quantity Produced</th>
+                    <th>Date Produced</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P001</td>
+                    <td>Product A</td>
+                    <td>100</td>
+                    <td>01/30/2025</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>P002</td>
+                    <td>Product B</td>
+                    <td>200</td>
+                    <td>01/29/2025</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .reports-page {
+            text-align: center;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: steelblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="reports-page">
+        <h1>Reports</h1>
+        <button id="generateReport">Generate Report</button>
+        <p id="errorMessage" class="error" style="display: none;">Error generating report.</p>
+    </div>
+
+    <script>
+        document.getElementById("generateReport").addEventListener("click", function() {
+            this.textContent = "Generating...";
+            this.disabled = true;
+            
+            setTimeout(() => {
+                this.textContent = "Generate Report";
+                this.disabled = false;
+                document.getElementById("errorMessage").style.display = "block";
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

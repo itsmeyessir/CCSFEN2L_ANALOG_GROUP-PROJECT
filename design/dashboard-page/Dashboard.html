@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .dashboard {
+            max-width: 800px;
+            margin: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            height: 200px;
+            border-bottom: 2px solid #000;
+        }
+        .bar {
+            width: 50px;
+            background-color: steelblue;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            padding: 5px;
+        }
+        .pie-chart {
+            display: flex;
+            gap: 10px;
+        }
+        .slice {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+        .tracking-logs {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tracking-logs li {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <h1>Dashboard</h1>
+
+        <!-- Production Summary -->
+        <div class="section">
+            <h2>Production Summary</h2>
+            <div class="chart">
+                <div class="bar-chart">
+                    <div class="bar" style="height: 100px;">
+                        <span>Product A</span>
+                        <span>50</span>
+                    </div>
+                    <div class="bar" style="height: 150px;">
+                        <span>Product B</span>
+                        <span>75</span>
+                    </div>
+                    <div class="bar" style="height: 200px;">
+                        <span>Product C</span>
+                        <span>100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logistics Summary -->
+        <div class="section">
+            <h2>Logistics Summary</h2>
+            <div class="chart">
+                <div class="pie-chart">
+                    <div class="slice" style="background-color: #ff5733;">Module A</div>
+                    <div class="slice" style="background-color: #33ff57;">Module B</div>
+                    <div class="slice" style="background-color: #3357ff;">Module C</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tracking Summary -->
+        <div class="section">
+            <h2>Tracking Summary</h2>
+            <ul class="tracking-logs">
+                <li><span class="module">Module X</span>: In Progress (Updated by John on 01/30/2025)</li>
+                <li><span class="module">Module Y</span>: Completed (Updated by Jane on 01/29/2025)</li>
+                <li><span class="module">Module Z</span>: Pending (Updated by Alex on 01/28/2025)</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

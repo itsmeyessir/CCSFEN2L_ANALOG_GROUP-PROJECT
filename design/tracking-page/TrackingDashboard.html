@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .tracking-dashboard {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        select {
+            padding: 5px;
+        }
+        .loading, .error {
+            font-size: 18px;
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tracking-dashboard">
+        <h1>Tracking Dashboard</h1>
+
+        <div id="loading" class="loading">Loading...</div>
+        <div id="errorMessage" class="error" style="display: none;">Error fetching data.</div>
+
+        <table id="trackingTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Status</th>
+                    <th>Updated By</th>
+                    <th>Updated At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="trackingBody">
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Simulated tracking logs data
+        const trackingLogs = [
+            { logId: "1", module: "Module A", status: "Pending", updatedBy: "User1", updatedAt: new Date().toISOString() },
+            { logId: "2", module: "Module B", status: "In Transit", updatedBy: "User2", updatedAt: new Date().toISOString() },
+            { logId: "3", module: "Module C", status: "Delivered", updatedBy: "User3", updatedAt: new Date().toISOString() },
+        ];
+
+        function loadTrackingData() {
+            const tableBody = document.getElementById("trackingBody");
+            tableBody.innerHTML = "";
+
+            trackingLogs.forEach(log => {
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${log.module}</td>
+                    <td>${log.status}</td>
+                    <td>${log.updatedBy}</td>
+                    <td>${new Date(log.updatedAt).toLocaleString()}</td>
+                    <td>
+                        <select onchange="updateStatus('${log.logId}', this.value)">
+                            <option value="Pending" ${log.status === "Pending" ? "selected" : ""}>Pending</option>
+                            <option value="In Transit" ${log.status === "In Transit" ? "selected" : ""}>In Transit</option>
+                            <option value="Delivered" ${log.status === "Delivered" ? "selected" : ""}>Delivered</option>
+                        </select>
+                    </td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("trackingTable").style.display = "table";
+        }
+
+        function updateStatus(logId, newStatus) {
+            const log = trackingLogs.find(log => log.logId === logId);
+            if (log) {
+                log.status = newStatus;
+                log.updatedAt = new Date().toISOString();
+                loadTrackingData();
+            }
+        }
+
+        // Simulate loading effect
+        setTimeout(loadTrackingData, 1500);
+    </script>
+</body>
+</html>

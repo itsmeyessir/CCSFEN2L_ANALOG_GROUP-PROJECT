@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./Layout.css";
-import { useLocation } from "react-router-dom";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,10 +10,15 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
   const noNavbarRoutes = ["/", "/register"];
+  const [isExpanded, setIsExpanded] = useState(true); // Navbar state
+
+  const isNoNavbarRoute = noNavbarRoutes.includes(location.pathname);
 
   return (
-    <div className="layout">
-      {!noNavbarRoutes.includes(location.pathname) && <Navbar />}
+    <div className={`layout ${isNoNavbarRoute ? "" : isExpanded ? "expanded" : "collapsed"}`}>
+      {!isNoNavbarRoute && (
+        <Navbar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+      )}
       <main className="content">{children}</main>
     </div>
   );

@@ -1,87 +1,86 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "./logos/image 1.png"; // Importing your custom logo.
+import logo from "./logos/image 1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt, faBars } from "@fortawesome/free-solid-svg-icons";
+import "./Navbar.css";
 
-const Navbar: React.FC = () => {
-  const [expanded, setExpanded] = useState(true);
+interface NavbarProps {
+  isExpanded: boolean;
+  setIsExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isExpanded, setIsExpanded }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    navigate("/"); // Redirect to login page
+    navigate("/");
   };
 
   return (
-    <nav className={`layout-nav ${expanded ? "expanded" : "collapsed"}`}>
-      {/* Top Section */}
-      <div className="top-section-container">
-        <div className="logo-container" onClick={() => setExpanded(!expanded)}>
+    <nav className={`navbar ${isExpanded ? "expanded" : "collapsed"}`}>
+      <div className="navbar-top">
+        <div
+          className="logo-container"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
           <img
             src={String(logo)}
             alt="Logo"
-            style={{ width: expanded ? 120 : 40 }} // Dynamically change logo size
+            style={{ width: isExpanded ? 120 : 40 }} // Dynamically change logo size
           />
         </div>
       </div>
 
-      {/* Navigation Links */}
       <ul className="nav-links">
         <NavbarItem
           text="Dashboard"
           link="/dashboard"
-          expanded={expanded}
-          icon={<span>📊</span>}
+          isExpanded={isExpanded}
+          icon="📊"
         />
         <NavbarItem
           text="Production Data"
           link="/production"
-          expanded={expanded}
-          icon={<span>📲</span>}
+          isExpanded={isExpanded}
+          icon="📲"
         />
         <NavbarItem
           text="Logistics"
           link="/logistics"
-          expanded={expanded}
-          icon={<span>🚛</span>}
+          isExpanded={isExpanded}
+          icon="🚛"
         />
         <NavbarItem
           text="Reports"
           link="/reports"
-          expanded={expanded}
-          icon={<span>📑</span>}
+          isExpanded={isExpanded}
+          icon="📑"
         />
         <NavbarItem
           text="Tracking"
           link="/tracking"
-          expanded={expanded}
-          icon={<span>📍</span>}
+          isExpanded={isExpanded}
+          icon="📍"
         />
       </ul>
 
-      {/* Bottom Section: User Info */}
-      <div className="user-info-container">
-        <img
-          src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
-          alt="User Avatar"
-          className="w-10 h-10 rounded-md"
-        />
-        {expanded && (
-          <div className="user-details">
-            <h4 className="font-semibold">John Doe</h4>
-            <span className="text-sm text-gray-500">johndoe@gmail.com</span>
-          </div>
-        )}
-      </div>
-      
-      {/* Logout Button */}
-      <div className={`logout-button-container ${expanded ? 'extended' : 'retracted'}`}>
-        <button onClick={handleLogout}>
-          {expanded ? (
-            <span>Logout</span>
-          ) : (
-            <FontAwesomeIcon icon={faSignOutAlt} />
+      <div className="navbar-bottom">
+        <div className="user-info">
+          <img
+            src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
+            alt="User Avatar"
+            className="user-avatar"
+          />
+          {isExpanded && (
+            <div className="user-details">
+              <h4>John Doe</h4>
+              <span>johndoe@gmail.com</span>
+            </div>
           )}
+        </div>
+        <button className="logout-btn" onClick={handleLogout}>
+          {isExpanded ? "Logout" : <FontAwesomeIcon icon={faSignOutAlt} />}
         </button>
       </div>
     </nav>
@@ -91,23 +90,24 @@ const Navbar: React.FC = () => {
 interface NavbarItemProps {
   text: string;
   link: string;
-  expanded: boolean;
-  icon: React.ReactNode;
+  isExpanded: boolean;
+  icon: string;
 }
 
-const NavbarItem: React.FC<NavbarItemProps> = ({ text, link, expanded, icon }) => {
+const NavbarItem: React.FC<NavbarItemProps> = ({
+  text,
+  link,
+  isExpanded,
+  icon,
+}) => {
   return (
     <li className="nav-item">
-      <Link
-        to={link}
-        className="flex items-center w-full p-2 text-gray-600 hover:bg-indigo-50 rounded-md"
-      >
-        {icon}
-        {expanded && <span className="ml-3">{text}</span>}
+      <Link to={link} className="nav-link">
+        <span className="nav-icon">{icon}</span>
+        {isExpanded && <span className="nav-text">{text}</span>}
       </Link>
     </li>
   );
 };
-
 
 export default Navbar;

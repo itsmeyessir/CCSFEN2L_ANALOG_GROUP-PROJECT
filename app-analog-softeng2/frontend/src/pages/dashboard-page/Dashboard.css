@@ -1,5 +1,8 @@
 .dashboard {
   padding: 20px;
+  margin-top: 20px; /* Move the dashboard content up a bit */
+  height: 100%; /* Ensure the dashboard takes the full height */
+  width: 100%; /* Ensure the dashboard takes the full width minus padding */
 }
 
 .dashboard h1 {

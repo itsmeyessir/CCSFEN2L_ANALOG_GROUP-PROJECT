@@ -3,6 +3,7 @@ import { useProductionData } from "../../hooks/useProductionData";
 import { useLogistics } from "../../hooks/useLogistics";
 import { useTracking } from "../../hooks/useTracking";
 import "./Dashboard.css";
+import Header from "../components/Header";
 
 const Dashboard = () => {
   const { productionData, loading: productionLoading, error: productionError } = useProductionData();
@@ -14,6 +15,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      <Header />
       <h1>Dashboard</h1>
 
       {/* Production Summary */}
